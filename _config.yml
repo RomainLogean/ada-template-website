@@ -14,6 +14,6 @@ description: >
 show_downloads: true
 navigation:
   - title: Home
-    url: README.md
+    url: /README.md
   - title: Example
-    url: example.md
+    url: /example.md
