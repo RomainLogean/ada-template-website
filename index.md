@@ -10,9 +10,12 @@ title: "The biases behind rating: Uncovering the hidden influences in beer ratin
 </div>
 <br>
 
-## **Introduction**
+# **Introduction**
 
 The main goal of every rating app is to show an objective rating for various objects, which in our case are beers. As each beer receives a lot of reviews from different users the mean rate of each beer should be quite representative, this is called the [Wisdom of the Crowd](https://en.wikipedia.org/wiki/Wisdom_of_the_crowd). However every rate is given by a human, and humans are not objective creatures, they might be influenced by several biases. If the majority of users are subject to the same bias, then the final rate can be significantly impacted. In this project, we want to analyze various biases, such as trends, cultural bias or naming bias, in the beer reviews’ dataset and see how they influence the rating. Knowing how people are influenced can help us to adjust the rating in order to get more objective and accurate ratings.
+
+In this data story we analyzed some bias in the rating for both BeerAdvocate and RateBeer website.
+The bias we chose to explore are : Time bias, Anchoring Effect, Cultural Bias and Naming Bias.
 
 ---
 
@@ -418,7 +421,7 @@ and the other a slight negative. This suggests that including style or brewery n
 
 ---
 
-## **Conclusion**
+# **Conclusion**
 
 Our analysis revealed multiple biases influencing beer ratings. Temporal trends show ratings stabilizing over time, with global holidays periods slightly boosting scores. The anchoring effect subtly impacts ratings, where initial reviews shape subsequent perceptions. Cultural bias appears minimal, with domestic and international ratings showing little significant difference. Finally, naming bias demonstrates that words in beer names significantly influence expectations and ratings, with terms evoking quality or craftsmanship correlating with higher scores.
 
