@@ -30,9 +30,7 @@ Our analysis focuses on the following critical questions:
 
 ---
 
-## **Findings**
-
-### **Influence of time on the ratings**
+# **1. Time Bias : Influence of time on the ratings**
 
 In this part we will analyse the time bias in the ratings, how the time influence the final ratings of beer. We see the evolution through the years but also the difference at some special period, specifically the Christmas and new year period and the Oktoberfest period.
 
@@ -40,11 +38,13 @@ First we look at different style of beer and how they evolve through the years. 
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img1.png" alt="" style="width: 100%;"/>
 </div>
+<br>
 
 They all start with a high variance in the ratings, but as the years go by, the ratings tend to converge to a certain value. The high rated seams to go down, and the low rated seams to go up. globally they are quite stable. Let's test some more style to confirm.
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img2.png" alt="" style="width: 100%;"/>
 </div>
+<br>
 
 We see that the second sample of style follow the same rule as the first one. The ratings tend to converge to a certain value. The high rated seams to go down, and the low rated seams to go up. We will try to explain this with more researches. We note that the global rating for all beer for the last two years is 3.41.
 
@@ -121,58 +121,55 @@ We can see for both dataset that the year has a significant impact on the rating
 Now we will compare the average rating per year for all beer and see there evolution as we know the year affect much. We add an error bar using the standard deviation. We test this for both dataset to see the difference. We also look at how many rating have been given for each year.
 
 The plot on the left show the average rating per year, on the right it is the same plot but with the standard deviation.
+<div style="text-align: center;">
 
 __*For the RateBeer dataset (the graduation are not the same on both plot)*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img3.png" alt="" style="width: 49.5%;"/>
   <img src="assets/img/part1/img4.png" alt="" style="width: 49.5%;"/>
 </div>
+<br>
 
 __*For the BeerAdvocate dataset (the graduation are not the same on both plot)*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img5.png" alt="" style="width: 49.5%;"/>
   <img src="assets/img/part1/img6.png" alt="" style="width: 49.5%;"/>
 </div>
+<br>
 
 __*Number of ratings*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img7.png" style="text-align: center; display: block; margin: 0 auto; width: 60%;">
 </div>
+<br>
+<div style="text-align: left;">
 
 The first year are not determinant as the number of review are very low, we will only focus on the data from 2001 for RateBeer and 2002 for BeerAdvocate. In these 5 plot we can see the that for both datasets the average ratings goes up through the year. The standard deviation goes down for both. We also see a big increase in the number of review through the year, with a downfall for BeerAdvocate from 2011. This mean the rating for the beer are growing more similar threw the time, and a little better. This can be explained by different bias that we look into in this research.
 
 To deepen ours analysis on the time bias, we will compare the ratings during the Christmas and new year period and the Oktoberfest period with the rest of the year to see if there is a difference. These two moment are holidays were people goes out much and drink lots of beer.
+
+<div style="text-align: center;">
 
 __*For the RateBeer dataset*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img8.png" alt="" style="width: 49.5%;"/>
   <img src="assets/img/part1/img9.png" alt="" style="width: 49.5%;"/>
 </div>
+<br>
 
 __*For the BeerAdvocate dataset*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img10.png" alt="" style="width: 49.5%;"/>
   <img src="assets/img/part1/img11.png" alt="" style="width: 49.5%;"/>
 </div>
+<br>
 
+<div style="text-align: left;">
 We see that on both dataset, the holidays rating are a little higher and there are more rating done, this could be because there a more people drinking and having time to review, and in a better environment this make them give slightly better result. As oppose for the Oktober fest period were it seam to have no influence, the fest are not famous enough in the whole world and only in some country to make a sufficient impact. There seam even that there are less review at that time, it could be a busy period for the people not concerned by the holiday.
 
 ---
 
-#### **Figure 2: BeerAdvocate Dataset**
-![Average Rating per Year (BeerAdvocate Dataset)](assets/img/Average%20Rating%20per%20Year%20BeerAdvocate%20dataset%20.png)
-
-**Observation**:  
-A spike in 2000 (rating > 4.0) is followed by a sharp decline, with steady growth post-2005.
-
-**Analysis**:  
-- **Spike in 2000**: Early adopters may have rated generously, or the sample size was small.  
-- **Recovery**: Ratings post-2005 reflect better beer quality and consumer preferences.  
-- **Comparison**: BeerAdvocate data exhibits more fluctuations than Ratebeer.
-
----
-
-### **2. Anchoring Effect**
+# **2. Anchoring Effect : Impact of early ratings**
 
 The [anchoring effect](https://en.wikipedia.org/wiki/Anchoring_effect) is a well-known cognitive bias that influences people's judgment based on prior opinions or information they encountered. This effect is present in everyone’s life, often without being noticed. The brain tends to rely on the first information it receives, which greatly influences the final judgment of everyone. For well-known items, this can lead to significant bias. If majority's opinions are influenced by the anchoring effect, then the item's perceived value might be skewed. Popular items may experience strong anchoring effects, potentially leading them to be highly overrated.
 
@@ -187,6 +184,7 @@ Then by analysing the plots of this distribution for individual beer, we observe
 
 If the initial ratings are very high, they tend to decrease over time, and if they are low, they tend to increase with time.
 Below are two carefully selected examples that illustrate perfectly this tendency:
+<div style="text-align: center;">
 
 __*Ratings distribution over time for representative beers*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -194,10 +192,12 @@ __*Ratings distribution over time for representative beers*__
   <img src="assets/img/part2/p2_cherry2.png" alt="Histogram of Domestic Ratings" style="width: 48%;"/>
 </div>
 <br>
+<div style="text-align: left;">
 
 On these specific plots we can see that the first ratings are highly biased, or at least very categorical. And this seem to appear on many beers. To see if the tendency really exists on every beer, we will plot the mean distance between the overall rating and the mean rating (of 3) for every popular beer.
 We only took the popular beers, because our analysis directly depends on the total number of ratings and we need many of them to observe any tendency over time. As before the graph is noisy, so we smooth it using a moving average.
 Below are these two plots, for RateBeer and BeerAdvocate respectively.
+<div style="text-align: center;">
 
 __*Average distance to the mean of ordered ratings*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -205,11 +205,13 @@ __*Average distance to the mean of ordered ratings*__
   <img src="assets/img/part2/ba_average_dist.png" alt="Histogram of Domestic Ratings" style="width: 48%;"/>
 </div>
 <br>
+<div style="text-align: left;">
 
 On these graphs we can see that the first ratings are on average more distant from the average rating of 3 than the following ones. We also observe that the ratings coming just after the first ones also tends to be higher than 3 but then decrease with time.
 This might be due to the Anchoring effect, but it can also just be due to the fact that the most enthusiastic or critical individuals are usually giving their rating first !
 
 By plotting a histogram of the distributions of the first ratings and the overall ratings for every beer, we observe that the first ratings tends to be greater, which correlates with the hypothesis that more enthusiastic people tend to give their rating first.
+<div style="text-align: center;">
 
 __*Distribution of first ratings and overall final rating*__
 
@@ -217,18 +219,22 @@ __*Distribution of first ratings and overall final rating*__
 <img src="assets/img/part2/first_vs_hist.png" 
      style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
+<div style="text-align: left;">
+
 We can also consider the regression to the mean effect, rating tends to naturally move close to the average, 3 in this case, and this is due to the fact that the first rating is often highly biased by special circumstances, emotions or by the novelty of the beer. 
 
 To see if the anchoring effect has an influence on the final rating of the beer, we want to search for a correlation between the first rating and the overall rating. 
 To do that, we perform a Pearson correlation test with null hypothesis telling that there is no correlation between the first rating and the final mean of the rating. The test tells us that there is a significant correlation of 0.683 (p value < 0.05). 
 We can illustrate this correlation by making a joint plot of both first rating and the mean of every other rating on every beer. This illustration highlights the correlation between both distributions.
 
+<div style="text-align: center;">
+
 __*Correlation between the first ratings vs overall final rating distributions*__
 
 <img src="assets/img/part2/joint_plot_correlation.png" 
      style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
-
+<div style="text-align: left;">
 The absence of any correlation would have suggested the absence of any anchoring effect, but this correlation alone doesn’t prove anything for sure as both the first rating and the mean rating concern the same beer and may be influenced by similar factors. 
 
 To prove the presence of any Anchoring Effect we need  to have a rating for every beer that is representative and unbiased, in order to see if the overall rating is influenced or not. 
@@ -241,13 +247,14 @@ The idea to observe Anchoring Effect would is to split the website rating in two
 The anchoring effect would act differently between the two groups, in the first group the overall rating would be __above__ the objective rating (or bros score), and in the second group, the overall of final rating would be __below__ the bros score.
 
 By doing so, we obtained the following results :
+<div style="text-align: center;">
 
 __*Difference between the overall ratings and bros scores for both groups*__
 
 <img src="assets/img/part2/bros_bar_plot.png" 
      style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
-
+<div style="text-align: left;">
 
 We can see on this graph that the rating differs from the bros score as expected according to the Anchoring Effect.
 For the group with high first ratings, the overall rating mean is slightly above by about `0.04` which is negligible. 
@@ -260,7 +267,7 @@ This statistical test results were a T-statistic of `4.02` and a P-value of `0.0
 
 ---
 
-### **3. Cultural Bias**
+# **3. Cultural Bias : Impact of the origine of the beer**
 
 So, we found that there is indeed a small but existing Anchor bias in the beer ratings. But what about cultural biases ?
 Indeed, it wouldn't be surprising that beers rated by people from the same country as where they were created are more
@@ -270,6 +277,7 @@ We'll first check whether people who rate beer that come from their country, giv
 We'll call them, respectively, domestic and international raters.  
 
 Let's plot ratings frequencies of both domestic (treatment group) and international (control group) raters!
+<div style="text-align: center;">
 
 __*Treatment and control group rating frequencies with KDE curves (BeerAdvocate left and RateBeer right)*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -278,9 +286,12 @@ __*Treatment and control group rating frequencies with KDE curves (BeerAdvocate 
 </div>
 <br>
 
+<div style="text-align: left;">
+
 We see that the distributions are pretty similar, but in both of them a slight shift between the domestic and international ratings can be seen.
 On the BeerAdvocate data, domestic reviewers seem to have slightly higher ratings, but we notice the inverse for RateBeer.
 We can't be sure just by looking at the histograms. Maybe a plot of the means and basic statistics can give us some more insight.
+<div style="text-align: center;">
 
 __*Treatment and control group statistics with bootstrapping error bars for the mean (BeerAdvocate left and RateBeer right)*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -291,6 +302,8 @@ __*Treatment and control group statistics with bootstrapping error bars for the 
 </div>
 <br>
 
+<div style="text-align: left;">
+
 The median for BeerAdvocate is slightly higher for the domestic raters and the mean is about 0.1 higher. However, the 
 quantiles are more or less the same for RateBeer and the international raters' mean looks higher than the domestic raters.
 Although the means' error bars are overlapping so they might just be also very similar.  
@@ -298,6 +311,7 @@ Although the means' error bars are overlapping so they might just be also very s
 It seems like there is a small positive impact on the rating when people come from the sample place as the beer in the
 BeerAdvocate data, but the results tend to show that there is no impact in the RateBeer data. Let's try fitting a
 linear model to both datasets with the ratting as the dependant variable and see the influence of each feature of the data.
+<div style="text-align: center;">
 
 __*Linear regression coefficients (BeerAdvocate left and RateBeer right)*__
 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -306,6 +320,7 @@ __*Linear regression coefficients (BeerAdvocate left and RateBeer right)*__
 </div>
 <br>
 
+<div style="text-align: left;">
 We see that the for BeerAdvocate, the domestic ratings, the alcohol by volume, the date when the rating was posted and
 "Brothers' score" (the two founders of BeerAdvocate) have a positive impact on the rating, but when people post a review 
 with the rating, it's rating tends to be lower. We can see the same behaviour for RateBeer (minus the review and bros_score
@@ -317,9 +332,7 @@ after all.
 
 ---
 
-### **4. Naming Bias**
-
-# What's in a Name?
+# **4. Naming Bias: What's in a Name?**
 
 When it comes to the enjoyment of drinking a beer, how much does the label impact us? This is a question that merges psychology, 
 branding and consumer behaviour. Beer names can vary wildly from classic descriptions of the beer and its brewery (Speedway IPA), 
@@ -329,6 +342,8 @@ Does this cause some sort of priming where certain names raise or lower our expe
 First of all, what do typical beer names look like? Below is a wordcloud of the most common terms found in beer names for 
 BeerAdvocate and RateBeer respectively:
 
+<div style="text-align: center;">
+
 __*BeerAdvocate Word cloud and RateBeer word cloud*__
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -336,6 +351,8 @@ __*BeerAdvocate Word cloud and RateBeer word cloud*__
   <img src="assets/img/part4/rb_word_cloud.png" alt="" style="width: 48%;"/>
 </div>
 <br>
+
+<div style="text-align: left;">
 
 When analyzing beer names, and as demonstrated by the word clouds above, we first noticed that the most common words refer 
 to the beer’s style or its brewery. Specifically, **41.87%** of beer names on BeerAdvocate and **38.13%** on RateBeer ave some 
@@ -349,6 +366,7 @@ We begin our analysis by studying the impact of specific words within a beer’s
 words to group similar forms together, we can observe the average rating that beers containing such a word have obtained. 
 We initially limit our analysis to the most common words, that have at least 100 beers that use them. For Beer Advocate, 
 we find the following ten best and worst rated keywords:
+<div style="text-align: center;">
 
 __*10 best and worst word in Beer Advocate*__
 
@@ -358,7 +376,10 @@ __*10 best and worst word in Beer Advocate*__
 </div>
 <br>
 
+<div style="text-align: left;">
+
 And for Rate Beer:
+<div style="text-align: center;">
 
 __*10 best and worst word in Rate Beer*__
 
@@ -367,6 +388,8 @@ __*10 best and worst word in Rate Beer*__
   <img src="assets/img/part4/bp4.png" alt="" style="width: 48%;"/>
 </div>
 <br>
+
+<div style="text-align: left;">
 
 The biggest takeaway from this analysis is that the choice of keywords in beer names strongly correlates with average ratings, 
 and these correlations seem to cluster into thematic groups that reflect consumer expectations and preferences. By grouping these keywords, 
