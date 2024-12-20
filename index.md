@@ -103,8 +103,7 @@ __*Distribution of first ratings and overall final rating*__
 
 
 <img src="assets/img/part2/first_vs_hist.png" 
-     alt="correlation joint plot" 
-     style="text-align: center; display: block; margin: 0 auto; width: 75%;">
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
 We can also consider the regression to the mean effect, rating tends to naturally move close to the average, 3 in this case, and this is due to the fact that the first rating is often highly biased by special circumstances, emotions or by the novelty of the beer. 
 
@@ -115,8 +114,7 @@ We can illustrate this correlation by making a joint plot of both first rating a
 __*Correlation between the first ratings vs overall final rating distributions*__
 
 <img src="assets/img/part2/joint_plot_correlation.png" 
-     alt="correlation joint plot" 
-     style="text-align: center; display: block; margin: 0 auto; width: 75%;">
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
 
 The absence of any correlation would have suggested the absence of any anchoring effect, but this correlation alone doesn’t prove anything for sure as both the first rating and the mean rating concern the same beer and may be influenced by similar factors. 
@@ -135,8 +133,7 @@ By doing so, we obtained the following results :
 __*Difference between the overall ratings and bros scores for both groups*__
 
 <img src="assets/img/part2/bros_bar_plot.png" 
-     alt="correlation joint plot" 
-     style="text-align: center; display: block; margin: 0 auto; width: 75%;">
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
 
 
