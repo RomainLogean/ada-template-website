@@ -153,6 +153,7 @@ To deepen ours analysis on the time bias, we will compare the ratings during the
 
 
 __*For the RateBeer dataset*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img8.png" alt="" style="width: 49.5%;"/>
   <img src="assets/img/part1/img9.png" alt="" style="width: 49.5%;"/>
@@ -160,6 +161,7 @@ __*For the RateBeer dataset*__
 <br>
 
 __*For the BeerAdvocate dataset*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img10.png" alt="" style="width: 49.5%;"/>
   <img src="assets/img/part1/img11.png" alt="" style="width: 49.5%;"/>
@@ -188,6 +190,7 @@ If the initial ratings are very high, they tend to decrease over time, and if th
 Below are two carefully selected examples that illustrate perfectly this tendency:
 
 __*Ratings distribution over time for representative beers*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part2/p2_cherry1.png" alt="Histogram of Domestic Ratings" style="width: 48%;"/>
   <img src="assets/img/part2/p2_cherry2.png" alt="Histogram of Domestic Ratings" style="width: 48%;"/>
@@ -199,6 +202,7 @@ We only took the popular beers, because our analysis directly depends on the tot
 Below are these two plots, for RateBeer and BeerAdvocate respectively.
 
 __*Average distance to the mean of ordered ratings*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part2/rb_average_dist.png" alt="Histogram of Domestic Ratings" style="width: 48%;"/>
   <img src="assets/img/part2/ba_average_dist.png" alt="Histogram of Domestic Ratings" style="width: 48%;"/>
@@ -222,7 +226,6 @@ We can also consider the regression to the mean effect, rating tends to naturall
 To see if the anchoring effect has an influence on the final rating of the beer, we want to search for a correlation between the first rating and the overall rating. 
 To do that, we perform a Pearson correlation test with null hypothesis telling that there is no correlation between the first rating and the final mean of the rating. The test tells us that there is a significant correlation of 0.683 (p value < 0.05). 
 We can illustrate this correlation by making a joint plot of both first rating and the mean of every other rating on every beer. This illustration highlights the correlation between both distributions.
-
 
 __*Correlation between the first ratings vs overall final rating distributions*__
 
@@ -271,6 +274,7 @@ We'll call them, respectively, domestic and international raters.
 Let's plot ratings frequencies of both domestic (treatment group) and international (control group) raters!
 
 __*Treatment and control group rating frequencies with KDE curves (BeerAdvocate left and RateBeer right)*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part3/ba_rating_freq.png" alt="" style="width: 48%;"/>
   <img src="assets/img/part3/rb_rating_freq.png" alt="" style="width: 48%;"/>
@@ -283,6 +287,7 @@ On the BeerAdvocate data, domestic reviewers seem to have slightly higher rating
 We can't be sure just by looking at the histograms. Maybe a plot of the means and basic statistics can give us some more insight.
 
 __*Treatment and control group statistics with bootstrapping error bars for the mean (BeerAdvocate left and RateBeer right)*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part3/ba_boxplot.png" alt="" style="width: 24%;"/>
   <img src="assets/img/part3/ba_means.png" alt="" style="width: 25%;"/>
@@ -300,6 +305,7 @@ BeerAdvocate data, but the results tend to show that there is no impact in the R
 linear model to both datasets with the ratting as the dependant variable and see the influence of each feature of the data.
 
 __*Linear regression coefficients (BeerAdvocate left and RateBeer right)*__
+
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part3/ba_coeffs.png" alt="" style="width: 48%;"/>
   <img src="assets/img/part3/rb_coeffs.png" alt="" style="width: 48%;"/>
@@ -326,7 +332,6 @@ Does this cause some sort of priming where certain names raise or lower our expe
 
 First of all, what do typical beer names look like? Below is a wordcloud of the most common terms found in beer names for 
 BeerAdvocate and RateBeer respectively:
-
 
 __*BeerAdvocate Word cloud and RateBeer word cloud*__
 
