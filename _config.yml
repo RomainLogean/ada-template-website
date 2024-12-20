@@ -16,4 +16,4 @@ navigation:
   - title: Home
     url: /
   - title: Example
-    url: /example.md
+    url: example
