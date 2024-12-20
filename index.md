@@ -5,6 +5,11 @@ title: "The biases behind rating: Uncovering the hidden influences in beer ratin
 
 # **The Biases Behind Rating: Uncovering the Hidden Influences in Beer Ratings**
 
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/main_image.png" alt="" style="text-align: center; display: block; margin: 0 auto; width: 100%;"/>
+</div>
+<br>
+
 ## **Introduction**
 
 The world of beer reviews is rich with data, offering insights into consumer preferences and biases. The main goal of any rating app is to provide **objective scores**, helping users navigate a world of choices. However, ratings are inherently **subjective**, shaped by the biases and perceptions of reviewers.
