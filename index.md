@@ -12,26 +12,7 @@ title: "The biases behind rating: Uncovering the hidden influences in beer ratin
 
 ## **Introduction**
 
-The world of beer reviews is rich with data, offering insights into consumer preferences and biases. The main goal of any rating app is to provide **objective scores**, helping users navigate a world of choices. However, ratings are inherently **subjective**, shaped by the biases and perceptions of reviewers.
-
-In this data story, we explore the various biases that influence beer ratings, ranging from **time-related trends** to **cultural and naming biases**. By identifying these influences, we propose adjustments that enhance the objectivity and accuracy of ratings.
-
----
-
-## **The Key Questions**
-
-Our analysis focuses on the following critical questions:
-
-1. **Temporal Trends**: How do ratings change over time? Are there seasonal variations or spikes linked to events or holidays?  
-2. **Anchoring Effects**: Do early ratings significantly impact subsequent ones? Are reviewers biased by the first few scores?  
-3. **Cultural Biases**: Do reviewers rate domestic beers more favorably than international ones? How does beer consumption per capita influence ratings?  
-4. **Naming Bias**: Does a beer's name set expectations that influence its rating?
-
----
-
-### **Datasets**
-1. **BeerAdvocate Dataset**: Comprising ratings, user information, and brewery details.  
-2. **Beer Consumption Data**: Total and per capita beer consumption by country (sourced from World Population Review).  
+The main goal of every rating app is to show an objective rating for various objects, which in our case are beers. As each beer receives a lot of reviews from different users the mean rate of each beer should be quite representative, this is calle the [Wisdom of the Crowd](https://en.wikipedia.org/wiki/Wisdom_of_the_crowd). However every rate is given by a human, and humans are not objective creatures, they might be influenced by several biases. If the majority of users are subject to the same bias, then the final rate can be significantly impacted. In this project, we want to analyze various biases, such as trends, cultural bias or naming bias, in the beer reviews’ dataset and see how they influence the rating. Knowing how people are influenced can help us to adjust the rating in order to get more objective and accurate ratings.
 
 ---
 
