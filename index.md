@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full
 title: "The biases behind rating: Uncovering the hidden influences in beer ratings"
 ---
 
@@ -24,17 +24,9 @@ Our analysis focuses on the following critical questions:
 
 ---
 
-## **Datasets and Methodology**
-
 ### **Datasets**
 1. **BeerAdvocate Dataset**: Comprising ratings, user information, and brewery details.  
 2. **Beer Consumption Data**: Total and per capita beer consumption by country (sourced from World Population Review).  
-
-### **Methodology**
-- **Temporal Analysis**: Ratings were aggregated by month and year to identify patterns and trends.  
-- **Anchoring Effect**: Correlation tests (Pearson and Spearman) were used to evaluate the relationship between early and subsequent ratings.  
-- **Cultural Bias**: Domestic and international ratings were compared using t-tests and mean comparisons, and their correlation with beer consumption was assessed.  
-- **Naming Bias**: Text analysis and Chi-square tests were used to evaluate the impact of beer names on ratings.
 
 ---
 
@@ -221,7 +213,9 @@ By plotting a histogram of the distributions of the first ratings and the overal
 
 __*Distribution of first ratings and overall final rating*__
 
-![histogram first vs overall](assets/img/part2/first_vs_hist.png)
+
+<img src="assets/img/part2/first_vs_hist.png" 
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
 We can also consider the regression to the mean effect, rating tends to naturally move close to the average, 3 in this case, and this is due to the fact that the first rating is often highly biased by special circumstances, emotions or by the novelty of the beer. 
 
@@ -231,7 +225,9 @@ We can illustrate this correlation by making a joint plot of both first rating a
 
 __*Correlation between the first ratings vs overall final rating distributions*__
 
-![correlation joint plot](assets/img/part2/joint_plot_correlation.png)
+<img src="assets/img/part2/joint_plot_correlation.png" 
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
+
 
 The absence of any correlation would have suggested the absence of any anchoring effect, but this correlation alone doesn’t prove anything for sure as both the first rating and the mean rating concern the same beer and may be influenced by similar factors. 
 
@@ -248,7 +244,9 @@ By doing so, we obtained the following results :
 
 __*Difference between the overall ratings and bros scores for both groups*__
 
-![Bros score bar plot](assets/img/part2/bros_bar_plot.png)
+<img src="assets/img/part2/bros_bar_plot.png" 
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
+
 
 
 We can see on this graph that the rating differs from the bros score as expected according to the Anchoring Effect.
@@ -331,7 +329,13 @@ Does this cause some sort of priming where certain names raise or lower our expe
 First of all, what do typical beer names look like? Below is a wordcloud of the most common terms found in beer names for 
 BeerAdvocate and RateBeer respectively:
 
-BeerAdvocate Word cloud					RateBeer word cloud
+__*BeerAdvocate Word cloud and RateBeer word cloud*__
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part4/ba_word_cloud.png" alt="" style="width: 48%;"/>
+  <img src="assets/img/part4/rb_word_cloud.png" alt="" style="width: 48%;"/>
+</div>
+<br>
 
 When analyzing beer names, and as demonstrated by the word clouds above, we first noticed that the most common words refer 
 to the beer’s style or its brewery. Specifically, **41.87%** of beer names on BeerAdvocate and **38.13%** on RateBeer ave some 
@@ -346,11 +350,23 @@ words to group similar forms together, we can observe the average rating that be
 We initially limit our analysis to the most common words, that have at least 100 beers that use them. For Beer Advocate, 
 we find the following ten best and worst rated keywords:
 
-GRAPH
+__*10 best and worst word in Beer Advocate*__
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part4/bp1.png" alt="" style="width: 48%;"/>
+  <img src="assets/img/part4/bp2.png" alt="" style="width: 48%;"/>
+</div>
+<br>
 
 And for Rate Beer:
 
-GRAPH
+__*10 best and worst word in Rate Beer*__
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part4/bp3.png" alt="" style="width: 48%;"/>
+  <img src="assets/img/part4/bp4.png" alt="" style="width: 48%;"/>
+</div>
+<br>
 
 The biggest takeaway from this analysis is that the choice of keywords in beer names strongly correlates with average ratings, 
 and these correlations seem to cluster into thematic groups that reflect consumer expectations and preferences. By grouping these keywords, 
