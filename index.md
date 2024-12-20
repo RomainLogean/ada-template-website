@@ -148,62 +148,159 @@ This statistical test result tell us that the difference  between the bros score
 
 ### **3. Cultural Bias**
 
-#### **Figure 4: Histogram of Domestic Ratings**
-![Histogram of Domestic Ratings](assets/img/Domestic%20Rating.png)
+So, we found that there is indeed a small but existing Anchor bias in the beer ratings. But what about cultural biases ?
+Indeed, it wouldn't be surprising that beers rated by people from the same country as where they were created are more
+generously rated than the others.  
 
-**Observation**:  
-Most domestic beers have fewer than **100 ratings**, with a steep decline and a long tail for popular beers.
+We'll first check whether people who rate beer that come from their country, give more generous notes or not when rating the beer.
+We'll call them, respectively, domestic and international raters.  
 
-**Analysis**:  
-- **Bias in Domestic Ratings**: A few highly rated beers dominate the average.  
-- **Recommendation**: Normalize data to account for less-rated beers.
+Let's plot ratings frequencies of both domestic (treatment group) and international (control group) raters!
 
----
+__*Treatment and control group rating frequencies with KDE curves (BeerAdvocate left and RateBeer right)*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part3/ba_rating_freq.png" alt="" style="width: 48%;"/>
+  <img src="assets/img/part3/rb_rating_freq.png" alt="" style="width: 48%;"/>
+</div>
+<br>
 
-#### **Figure 5: Histogram of International Ratings**
-![Histogram of International Ratings](assets/img/International%20Rating.png)
+We see that the distributions are pretty similar, but in both of them a slight shift between the domestic and international ratings can be seen.
+On the BeerAdvocate data, domestic reviewers seem to have slightly higher ratings, but we notice the inverse for RateBeer.
+We can't be sure just by looking at the histograms. Maybe a plot of the means and basic statistics can give us some more insight.
 
-**Observation**:  
-International beers exhibit a broader distribution, with many beers receiving **>1,000 ratings**.
+__*Treatment and control group statistics with bootstrapping error bars for the mean (BeerAdvocate left and RateBeer right)*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part3/ba_boxplot.png" alt="" style="width: 24%;"/>
+  <img src="assets/img/part3/ba_means.png" alt="" style="width: 25%;"/>
+  <img src="assets/img/part3/rb_boxplot.png" alt="" style="width: 24%;"/>
+  <img src="assets/img/part3/rb_means.png" alt="" style="width: 25%;"/>
+</div>
+<br>
 
-**Analysis**:  
-- **Popularity Disparity**: International beers have a wider consumer base.  
-- **Recommendation**: Normalize data to enable fair comparisons between domestic and international ratings.
+The median for BeerAdvocate is slightly higher for the domestic raters and the mean is about 0.1 higher. However, the 
+quantiles are more or less the same for RateBeer and the international raters' mean looks higher than the domestic raters.
+Although the means' error bars are overlapping so they might just be also very similar.  
+
+It seems like there is a small positive impact on the rating when people come from the sample place as the beer in the
+BeerAdvocate data, but the results tend to show that there is no impact in the RateBeer data. Let's try fitting a
+linear model to both datasets with the ratting as the dependant variable and see the influence of each feature of the data.
+
+__*Linear regression coefficients (BeerAdvocate left and RateBeer right)*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part3/ba_coeffs.png" alt="" style="width: 48%;"/>
+  <img src="assets/img/part3/rb_coeffs.png" alt="" style="width: 48%;"/>
+</div>
+<br>
+
+We see that the for BeerAdvocate, the domestic ratings, the alcohol by volume, the date when the rating was posted and
+"Brothers' score" (the two founders of BeerAdvocate) have a positive impact on the rating, but when people post a review 
+with the rating, it's rating tends to be lower. We can see the same behaviour for RateBeer (minus the review and bros_score
+which are only on BeerAdvocate). There are quite large error bars for the domestic_rating variable for RateBeer, so again
+it's hard to say if domestic ratings influence the ratings for this data.  
+
+This a bit disappointing... Results show that there might not be a real difference between domestic and international ratings
+after all.
 
 ---
 
 ### **4. Naming Bias**
 
-#### **Figure 6: Comparison Analysis**
-![Comparison Analysis](assets/img/Camparison.png)
+# What's in a Name?
 
-**Observation**:  
-First ratings are consistently higher than subsequent averages, indicating **optimism bias**.
+When it comes to the enjoyment of drinking a beer, how much does the label impact us? This is a question that merges psychology, 
+branding and consumer behaviour. Beer names can vary wildly from classic descriptions of the beer and its brewery (Speedway IPA), 
+to quirky and unique names (Hopportunity). These names were selected for a reason, and as consumers, the name is the first thing that we see. 
+Does this cause some sort of priming where certain names raise or lower our expectation of a beer and thus the likelihood that we rated it higher or lower?
 
-**Analysis**:  
-- **Expectation vs. Reality**: Higher initial ratings reflect enthusiasm or positive impressions from beer names.  
-- **Recommendation**: Platforms could anonymize beer names during early reviews to reduce bias.
+First of all, what do typical beer names look like? Below is a wordcloud of the most common terms found in beer names for 
+BeerAdvocate and RateBeer respectively:
 
----
+BeerAdvocate Word cloud					RateBeer word cloud
 
-## **Key Insights**
+When analyzing beer names, and as demonstrated by the word clouds above, we first noticed that the most common words refer 
+to the beer’s style or its brewery. Specifically, **41.87%** of beer names on BeerAdvocate and **38.13%** on RateBeer ave some 
+mention of the beer’s style, while **14.30%** on BeerAdvocate and a striking **89.35%** on RateBeer mention the brewery. 
+Given the high prevalence of these references—especially brewery names on RateBeer—we exclude them from our keyword analysis 
+moving forward to focus on more unique and meaningful terms that might better capture the impact of naming on ratings.
 
-1. **Temporal Trends**:  
-   - Both datasets show an upward trend in ratings over time, influenced by industry growth and consumer preferences.  
+## Average Rating per Keyword
 
-2. **Anchoring Effect**:  
-   - Early ratings bias subsequent reviews, requiring adjusted weightings for objectivity.  
+We begin our analysis by studying the impact of specific words within a beer’s name. By tokenizing beer names and stemming 
+words to group similar forms together, we can observe the average rating that beers containing such a word have obtained. 
+We initially limit our analysis to the most common words, that have at least 100 beers that use them. For Beer Advocate, 
+we find the following ten best and worst rated keywords:
 
-3. **Cultural Bias**:  
-   - Domestic beers receive more favorable ratings, reflecting cultural preferences.  
+GRAPH
 
-4. **Naming Bias**:  
-   - Optimistic early ratings may be driven by beer names, suggesting anonymization as a potential solution.
+And for Rate Beer:
+
+GRAPH
+
+The biggest takeaway from this analysis is that the choice of keywords in beer names strongly correlates with average ratings, 
+and these correlations seem to cluster into thematic groups that reflect consumer expectations and preferences. By grouping these keywords, 
+we can better understand the types of associations they evoke and how they might prime a drinker’s experience.
+
+### Keywords Associated with High Ratings
+
+The highest-rated beers often include words that evoke indulgence, craftsmanship, or exclusivity. These can be grouped into several themes:
+
+#### 1. Barrel-Aging and Blending
+
+Terms like “blend”, “brandi”, “cognac” , and “ba” (short for barrel-aged) suggest techniques associated with high-end or 
+experimental brewing. These processes are often perceived as elevating a beer’s complexity and depth, potentially leading to higher ratings.
+
+#### 2. Dessert-Like Flavors
+    
+Words like “cake”, “bean” (linked to vanilla or coffee), and “nib” (cacao nibs) suggest rich flavors. 
+These terms align with consumer preferences for dessert-inspired beers.
+
+#### 3. Exotic Hops
+    
+Terms such as “galaxi”, "dank" and “sauvin”, which reference specific hop varieties, hint at the use of rare or premium ingredients. 
+This resonates with craft beer enthusiasts who value innovation and distinctive flavor profiles.
+
+#### 4. Craft and Independent Branding
+    
+Names like “speedway” and “mikkel” are tied to well-regarded craft breweries. 
+These words carry brand-specific associations that can elevate consumer expectations.
+
+### Keywords Associated with Low Ratings
+
+On the other end of the spectrum, the lowest-rated beers often include terms that suggest simplicity, 
+mass production, or lower-quality offerings. These terms can be grouped as follows:
+
+#### 1. Mass-Market Appeal
+    
+Words like “premium”, “light”, “ice”, and “draft” are commonly associated with large-scale commercial beers. 
+These beers are often perceived as less complex or distinctive, which may lead to lower ratings.
+
+#### 2. Mixes or Low-Alcohol Styles
+    
+Terms like “radler,” “shandi,” and “alkoholfrei” refer to lighter, often fruit-infused or alcohol-free beverages. 
+While these styles have their niche, they are not typically associated with the depth and richness favored by craft beer enthusiasts.
+
+#### 3. Generic Branding
+    
+Words such as “cerveza” and “classic” evoke a traditional or straightforward image. This simplicity may not excite consumers looking for novelty or creativity.
+
+The analysis highlights how a beer’s name is tied to certain expectations, and what the average reviewer on the platform tends to prefer. 
+Words linked to indulgence, rarity, or craftsmanship tend to prime consumers to expect—and potentially rate—a better experience, 
+whereas names tied to mass production or simplicity might lower expectations and ratings. While it is not made evident that the label causes higher/lower ratings, 
+it is certain that reviewers are more responsive to complex flavors and techniques than the typical available beers most people enjoy.
+
+## Descriptive Names vs Non-Descriptive Names
+
+As seen before, most beer names are quite descriptive. They clearly present the beer's style and/or brewery. 
+But perhaps people prefer more creative names instead? To explore whether including the beer style or brewery name impacts ratings, 
+we compared beers with and without these descriptors across all beers and specific styles like lagers (which is a keyword that tends to have lower average ratings). 
+While a t-test revealed a statistically significant difference, the effect was minuscule and inconsistent between datasets: one showed a slight positive effect, 
+and the other a slight negative. This suggests that including style or brewery names in the beer’s name does not meaningfully influence its rating.
 
 ---
 
 ## **Conclusion**
 
-This analysis reveals multiple biases influencing beer ratings, including temporal trends, anchoring effects, cultural preferences, and naming influences. Addressing these biases through normalization, weighting adjustments, and anonymization can lead to more objective and reliable ratings, ultimately benefiting consumers and breweries alike.
+This analysis reveals multiple biases influencing beer ratings, including temporal trends, anchoring effects, cultural preferences, and naming influences. 
+Addressing these biases through normalization, weighting adjustments, and anonymization can lead to more objective and reliable ratings, ultimately benefiting consumers and breweries alike.
 
 ---
