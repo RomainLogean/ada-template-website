@@ -437,7 +437,8 @@ and the other a slight negative. This suggests that including style or brewery n
 
 ## **Conclusion**
 
-This analysis reveals multiple biases influencing beer ratings, including temporal trends, anchoring effects, cultural preferences, and naming influences. 
-Addressing these biases through normalization, weighting adjustments, and anonymization can lead to more objective and reliable ratings, ultimately benefiting consumers and breweries alike.
+Our analysis revealed multiple biases influencing beer ratings. Temporal trends show ratings stabilizing over time, with holiday periods slightly boosting scores. The anchoring effect subtly impacts ratings, where initial reviews shape subsequent perceptions. Cultural bias appears minimal, with domestic and international ratings showing little significant difference. Finally, naming bias demonstrates that words in beer names significantly influence expectations and ratings, with terms evoking quality or craftsmanship correlating with higher scores.
+
+By understanding these biases, we can refine rating systems to offer more objective insights, helping consumers make better-informed decisions.
 
 ---
