@@ -1,14 +1,7 @@
 theme: jekyll-theme-minimal
-title: "The biases behind rating: Uncovering the hidden influences in beer ratings"
-description: >
-  The main goal of every rating app is to show an objective rating for various objects, which in our case are beers. 
-  As each beer receives a lot of reviews from different users, the mean rate of each beer should be quite representative. 
-  However, every rate is given by a human, and humans are not objective creatures; they might be influenced by several biases. 
-  If the majority of users are subject to the same bias, then the final rate can be significantly impacted. 
-  In this project, we want to analyze various biases, such as trends, cultural bias, or naming bias, in the beer reviews’ dataset 
-  and see how they influence the rating. Knowing how people are influenced can help us to adjust the rating in order to get more 
-  objective and accurate ratings.
-show_downloads: true
+title: ADA Template Website
+description: A template website for ADA
+show_downloads: True
 navigation:
   - title: Home
     url: /
