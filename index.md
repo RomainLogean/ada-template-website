@@ -40,18 +40,45 @@ Our analysis focuses on the following critical questions:
 
 ## **Findings**
 
-### **1. Temporal Trends**
+### **Influence of time on the ratings**
 
-#### **Figure 1: Ratebeer Dataset**
-![Average Rating per Year (Ratebeer Dataset)](assets/img/Average%20Rateing%20per%20Year%20Ratebeer.png)
+In this part we will analyse the time bias in the ratings, how the time influence the final ratings of beer. We see the evolution through the years but also the difference at some special period, specifically the Christmas and new year period and the Oktoberfest period.
 
-**Observation**:  
-The average rating starts at **3.25** in 2000, dips slightly, and then steadily increases, reaching **3.40** by 2017.
+First we look at different style of beer and how they evolve through the years. We start by looking only on the rateBeer dataset, to reduce redundant plot, as both are he same for these plot.
+![img.png](assets/img/part1/img1.png)
+They all start with a high variance in the ratings, but as the years go by, the ratings tend to converge to a certain value. The high rated seams to go down, and the low rated seams to go up. globally they are quite stable. Let's test some more style to confirm.
+ ![img.png](assets/img/part1/img2.png)
+We see that the second sample of style follow the same rule as the first one. The ratings tend to converge to a certain value. The high rated seams to go down, and the low rated seams to go up. We will try to explain this with more researches. We note that the global rating for all beer for the last two years is 3.41.
 
-**Analysis**:  
-- **Upward Trend**: Consistent increases in ratings suggest improving beer quality or shifting consumer expectations.  
-- **Initial Dip**: Early ratings reflect stricter evaluations or limited beer variety.  
-- **Industry Growth**: The rise of craft beer in the mid-2000s likely contributed to higher ratings.
+Here we will see what and how much the year the month and the day affect the rating for both dataset.
+
+We can see for both dataset that the year has a significant impact on the rating, the month and the day have a less significant impact. With little more impact on the RateBeer dataset.
+
+Now we will compare the average rating per year for all beer and see there evolution as we know the year affect much. We add an error bar using the standard deviation. We test this for both dataset to see the difference. We also look at how many rating have been given for each year.
+
+![img.png](assets/img/part1/img3.png)
+
+![img.png](assets/img/part1/img4.png)
+
+![img.png](assets/img/part1/img5.png)
+
+![img.png](assets/img/part1/img6.png)
+
+![img.png](assets/img/part1/img7.png)
+
+The first year are not determinant as the number of review are very low, we will only focus on the data from 2001 for RateBeer and 2002 for BeerAdvocate. In these 5 plot we can see the that for both datasets the average ratings goes up through the year, from 3.10 to 3.43 for RateBeer and 3.74 to 3.98 for beerAdvocate. The standard deviation goes down for both. We also see a big increase in the number of review through the year, with a downfall for BeerAdvocate from 2011. This mean the rating for the beer are growing more similar threw the time, and a little better. This can be explained by different bias that we look into in this research.
+
+To deepen ours analysis on the time bias, we will compare the ratings during the Christmas and new year period and the Oktoberfest period with the rest of the year to see if there is a difference. These two moment are holidays were people goes out much and drink lots of beer.
+
+![img.png](assets/img/part1/img8.png)
+
+![img.png](assets/img/part1/img9.png)
+
+![img.png](assets/img/part1/img10.png)
+
+![img.png](assets/img/part1/img11.png)
+
+We see that on both dataset, the holidays rating are a little higher and there are more rating done, this could be because there a more people drinking and having time to review, and in a better environment this make them give slightly better result. As oppose for the Oktober fest period were it seam to have no influence, the fest are not famous enough in the whole world and only in some country to make a sufficient impact. There seam even that there are less review at that time, it could be a busy period for the people not concerned by the holiday.
 
 ---
 
