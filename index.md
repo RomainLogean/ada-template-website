@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full
 title: "The biases behind rating: Uncovering the hidden influences in beer ratings"
 ---
 
