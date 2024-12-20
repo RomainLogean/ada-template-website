@@ -37,18 +37,130 @@ Our analysis focuses on the following critical questions:
 
 ## **Findings**
 
-### **1. Temporal Trends**
+### **Influence of time on the ratings**
 
-#### **Figure 1: Ratebeer Dataset**
-![Average Rating per Year (Ratebeer Dataset)](assets/img/Average%20Rateing%20per%20Year%20Ratebeer.png)
+In this part we will analyse the time bias in the ratings, how the time influence the final ratings of beer. We see the evolution through the years but also the difference at some special period, specifically the Christmas and new year period and the Oktoberfest period.
 
-**Observation**:  
-The average rating starts at **3.25** in 2000, dips slightly, and then steadily increases, reaching **3.40** by 2017.
+First we look at different style of beer and how they evolve through the years. We start by looking only on the rateBeer dataset, to reduce redundant plot, as both are he same for these plot.
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img1.png" alt="" style="width: 100%;"/>
+</div>
 
-**Analysis**:  
-- **Upward Trend**: Consistent increases in ratings suggest improving beer quality or shifting consumer expectations.  
-- **Initial Dip**: Early ratings reflect stricter evaluations or limited beer variety.  
-- **Industry Growth**: The rise of craft beer in the mid-2000s likely contributed to higher ratings.
+They all start with a high variance in the ratings, but as the years go by, the ratings tend to converge to a certain value. The high rated seams to go down, and the low rated seams to go up. globally they are quite stable. Let's test some more style to confirm.
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img2.png" alt="" style="width: 100%;"/>
+</div>
+
+We see that the second sample of style follow the same rule as the first one. The ratings tend to converge to a certain value. The high rated seams to go down, and the low rated seams to go up. We will try to explain this with more researches. We note that the global rating for all beer for the last two years is 3.41.
+
+Here we will see what and how much the year the month and the day affect the rating for both dataset.
+
+*The logistic regression analysis of the rating on the RateBeer dataset gives :*
+
+<style>
+    table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 20px auto;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+</style>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Coefficient</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Year</td>
+                <td>0.0549</td>
+            </tr>
+            <tr>
+                <td>Month</td>
+                <td>-0.0013</td>
+            </tr>
+            <tr>
+                <td>Day</td>
+                <td>0.0003</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+*The logistic regression analysis of the rating on the BeerAdvocate dataset gives :*
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Coefficient</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Year</td>
+                <td>0.0428</td>
+            </tr>
+            <tr>
+                <td>Month</td>
+                <td>-0.0032</td>
+            </tr>
+            <tr>
+                <td>Day</td>
+                <td>-0.0002</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+We can see for both dataset that the year has a significant impact on the rating, the month and the day have a less significant impact. With little more impact on the RateBeer dataset.
+
+Now we will compare the average rating per year for all beer and see there evolution as we know the year affect much. We add an error bar using the standard deviation. We test this for both dataset to see the difference. We also look at how many rating have been given for each year.
+
+The plot on the left show the average rating per year, on the right it is the same plot but with the standard deviation.
+
+__*For the RateBeer dataset (the graduation are not the same on both plot)*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img3.png" alt="" style="width: 49.5%;"/>
+  <img src="assets/img/part1/img4.png" alt="" style="width: 49.5%;"/>
+</div>
+
+__*For the BeerAdvocate dataset (the graduation are not the same on both plot)*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img5.png" alt="" style="width: 49.5%;"/>
+  <img src="assets/img/part1/img6.png" alt="" style="width: 49.5%;"/>
+</div>
+
+__*Number of ratings*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img7.png" style="text-align: center; display: block; margin: 0 auto; width: 60%;">
+</div>
+
+The first year are not determinant as the number of review are very low, we will only focus on the data from 2001 for RateBeer and 2002 for BeerAdvocate. In these 5 plot we can see the that for both datasets the average ratings goes up through the year. The standard deviation goes down for both. We also see a big increase in the number of review through the year, with a downfall for BeerAdvocate from 2011. This mean the rating for the beer are growing more similar threw the time, and a little better. This can be explained by different bias that we look into in this research.
+
+To deepen ours analysis on the time bias, we will compare the ratings during the Christmas and new year period and the Oktoberfest period with the rest of the year to see if there is a difference. These two moment are holidays were people goes out much and drink lots of beer.
+
+__*For the RateBeer dataset*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img8.png" alt="" style="width: 49.5%;"/>
+  <img src="assets/img/part1/img9.png" alt="" style="width: 49.5%;"/>
+</div>
+
+__*For the BeerAdvocate dataset*__
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img/part1/img10.png" alt="" style="width: 49.5%;"/>
+  <img src="assets/img/part1/img11.png" alt="" style="width: 49.5%;"/>
+</div>
+
+We see that on both dataset, the holidays rating are a little higher and there are more rating done, this could be because there a more people drinking and having time to review, and in a better environment this make them give slightly better result. As oppose for the Oktober fest period were it seam to have no influence, the fest are not famous enough in the whole world and only in some country to make a sufficient impact. There seam even that there are less review at that time, it could be a busy period for the people not concerned by the holiday.
 
 ---
 
@@ -106,7 +218,9 @@ By plotting a histogram of the distributions of the first ratings and the overal
 
 __*Distribution of first ratings and overall final rating*__
 
-![histogram first vs overall](assets/img/part2/first_vs_hist.png)
+
+<img src="assets/img/part2/first_vs_hist.png" 
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
 
 We can also consider the regression to the mean effect, rating tends to naturally move close to the average, 3 in this case, and this is due to the fact that the first rating is often highly biased by special circumstances, emotions or by the novelty of the beer. 
 
@@ -116,7 +230,9 @@ We can illustrate this correlation by making a joint plot of both first rating a
 
 __*Correlation between the first ratings vs overall final rating distributions*__
 
-![correlation joint plot](assets/img/part2/joint_plot_correlation.png)
+<img src="assets/img/part2/joint_plot_correlation.png" 
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
+
 
 The absence of any correlation would have suggested the absence of any anchoring effect, but this correlation alone doesn’t prove anything for sure as both the first rating and the mean rating concern the same beer and may be influenced by similar factors. 
 
@@ -133,7 +249,9 @@ By doing so, we obtained the following results :
 
 __*Difference between the overall ratings and bros scores for both groups*__
 
-![Bros score bar plot](assets/img/part2/bros_bar_plot.png)
+<img src="assets/img/part2/bros_bar_plot.png" 
+     style="text-align: center; display: block; margin: 0 auto; width: 50%;">
+
 
 
 We can see on this graph that the rating differs from the bros score as expected according to the Anchoring Effect.
