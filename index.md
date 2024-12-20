@@ -37,9 +37,9 @@ Our analysis focuses on the following critical questions:
 
 # **1. Time Bias : Influence of time on the ratings**
 
-In this part we will analyse the time bias in the ratings, how the time influence the final ratings of beer. We see the evolution through the years but also the difference at some special period, specifically the Christmas and new year period and the Oktoberfest period.
+Does people always rate there beer on the same criteria ? Does festive ambiance and holidays affect these rating thus biasing them ? How does these ratings evolve through time and does it change ? In this part we will analyse the time bias in the ratings and how the time influence the final ratings of beer. We will see in here the evolution through the years but also the difference at some special period, specifically the Christmas and new year period and the Oktoberfest period.
 
-First we look at different style of beer and how they evolve through the years. We start by looking only on the rateBeer dataset, to reduce redundant plot, as both are he same for these plot.
+First we look at different style of beer and how they evolve through the years. We start by looking only on the rateBeer dataset, to reduce redundant plot, as both are the same for these plot.
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="assets/img/part1/img1.png" alt="" style="width: 100%;"/>
 </div>
@@ -439,7 +439,7 @@ and the other a slight negative. This suggests that including style or brewery n
 
 ## **Conclusion**
 
-Our analysis revealed multiple biases influencing beer ratings. Temporal trends show ratings stabilizing over time, with holiday periods slightly boosting scores. The anchoring effect subtly impacts ratings, where initial reviews shape subsequent perceptions. Cultural bias appears minimal, with domestic and international ratings showing little significant difference. Finally, naming bias demonstrates that words in beer names significantly influence expectations and ratings, with terms evoking quality or craftsmanship correlating with higher scores.
+Our analysis revealed multiple biases influencing beer ratings. Temporal trends show ratings stabilizing over time, with global holidays periods slightly boosting scores. The anchoring effect subtly impacts ratings, where initial reviews shape subsequent perceptions. Cultural bias appears minimal, with domestic and international ratings showing little significant difference. Finally, naming bias demonstrates that words in beer names significantly influence expectations and ratings, with terms evoking quality or craftsmanship correlating with higher scores.
 
 By understanding these biases, we can refine rating systems to offer more objective insights, helping consumers make better-informed decisions.
 
