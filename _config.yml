@@ -4,6 +4,6 @@ description: A template website for ADA
 show_downloads: False
 navigation:
   - title: Home
-    url: index.md
+    url: index
   - title: Example
-    url: example.md
+    url: example
