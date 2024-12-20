@@ -8,12 +8,9 @@ description: >
   In this project, we want to analyze various biases, such as trends, cultural bias, or naming bias, in the beer reviews’ dataset 
   and see how they influence the rating. Knowing how people are influenced can help us to adjust the rating in order to get more 
   objective and accurate ratings.
-
-
-  
 show_downloads: true
 navigation:
   - title: Home
-    url: README
+    url: /
   - title: Example
     url: example
