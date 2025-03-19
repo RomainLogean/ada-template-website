@@ -428,3 +428,5 @@ Our analysis revealed multiple biases influencing beer ratings. Temporal trends 
 By understanding these biases, we can refine rating systems to offer more objective insights, helping consumers make better-informed decisions.
 
 ---
+
+Credit : Oliver Sorrentino, Romain Logean, Yann Becker
